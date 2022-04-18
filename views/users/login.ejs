@@ -1,0 +1,39 @@
+<% layout ('layout/boilerplate') %>
+
+<head>
+        <link rel="stylesheet" href="/CSS/login.css">
+</head>
+
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3 text-white">Login to your account!</h1>
+        <p class="col-lg-10 fs-4 text-white">Connect to your account to post anything new and to update whatever you'd like!</p>
+      </div>
+
+<div class="col-md-10 mx-auto col-lg-5">
+        <form action="/login" method="POST" class="validated-form p-4 p-md-5 border rounded-3 bg-light" novalidate>
+                <div class="form-floating mb-3">   
+                        <input type="text" autocomplete="username" class="form-control" placeholder="Your username" id="username" name="username" required>
+                        <label for="username" class="form-label">Username</label>
+                </div>
+<!-- 
+                <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="username" placeholder="Your username" name="username" required>
+                        <label for="username" class="form-label">Username</label>
+                </div>
+                 -->
+                <div class="form-floating mb-3">
+                        <input type="password" autocomplete="current-password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        <label for="password" class="form-label">Password</label>
+                </div>
+
+                <!-- <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <label for="password" class="form-label">Password</label>
+                </div> -->
+                <button class="btn btn-warning btn-lg w-100">Login</button>
+        </form> 
+      </div>
+    </div>
+  </div>

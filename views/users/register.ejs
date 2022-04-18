@@ -1,0 +1,39 @@
+<% layout ('layout/boilerplate') %>
+<head>
+        <link rel="stylesheet" href="/CSS/register.css">
+</head>
+
+
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3 text-white">Welcome to YelpCAMP</h1>
+        <p class="col-lg-10 fs-4 text-white">Create an account to explore or share campgrounds that are worth visiting!</p>
+      </div>
+
+      <div class="col-md-10 mx-auto col-lg-5" >
+        <form class="p-4 p-md-5 border rounded-3 bg-light  validated-form" action="/register" method="POST" novalidate>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            <label for="email" >Email address</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="text" autocomplete="username" class="form-control" id="username" name="username" placeholder="Your Username">
+            <label for="username" class="form-label">Username</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="password" autocomplete="new-password" class="form-control" id="password" name="password" placeholder="Password">
+            <label for="password" class="form-label">Password</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-warning" type="submit">Register</button>
+          <hr class="my-4">
+          <small class="text-muted">By clicking register, you agree to the terms of use.</small>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
