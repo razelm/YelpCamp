@@ -186,6 +186,7 @@ app.use((err, req, res, next) => {
 // });
 
 //Local Host
-app.listen(3000, () => {
-  console.log("Port 3000 open");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Port ${port} open!`);
 });
