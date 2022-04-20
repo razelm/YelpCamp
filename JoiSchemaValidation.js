@@ -1,25 +1,25 @@
 const baseJoi = require("joi");
 const sanitizeHTML = require('sanitize-html')
 
-// const extension = (joi) => ({
-//   type: "string",
-//   base: joi.string(),
-//   messages: {
-//     "string.escapeHTML":"{{#label} must no include HTML!}"
-//   },
-//   rules: {
-//     escapeHTML: {
-//       validate(value,helpers) {
-//         const clean = sanitizeHTML (value, {
-//           allowedTags: [],
-//           allowedAttributes: {},
-//         });
-//         if(clean !== value) return helpers.error("String.escapeHTML", {value});
-//         return clean; 
-//       }
-//     }
-//   }
-// });
+const extension = (joi) => ({
+  type: "string",
+  base: joi.string(),
+  messages: {
+    "string.escapeHTML":"{{#label} must no include HTML!}"
+  },
+  rules: {
+    escapeHTML: {
+      validate(value,helpers) {
+        const clean = sanitizeHTML (value, {
+          allowedTags: [],
+          allowedAttributes: {},
+        });
+        if(clean !== value) return helpers.error("String.escapeHTML", {value});
+        return clean; 
+      }
+    }
+  }
+});
 
 const Joi = baseJoi.extend(extension);
 
