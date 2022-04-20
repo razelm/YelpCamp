@@ -14,12 +14,12 @@ module.exports.createReview = async (req, res) => {
   console.log(review);
 };
 
-module.exports.editReviews = async (req, res, next) => {
-  await Review.findByIdAndUpdate(req.params.review_id, req.body.review);
-  req.flash("success", "Review updated successfully!");
-  res.redirect(`/campgrounds/${req.params.id}`);
-   console.log(review);
-};
+// module.exports.editReviews = async (req, res, next) => {
+//   await Review.findByIdAndUpdate(req.params.review_id, req.body.review);
+//   req.flash("success", "Review updated successfully!");
+//   res.redirect(`/campgrounds/${req.params.id}`);
+//    console.log(review);
+// };
 
 module.exports.deleteReview = async (req, res) => {
   const { id, reviewId } = req.params;

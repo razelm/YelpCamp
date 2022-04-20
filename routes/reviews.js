@@ -1,5 +1,4 @@
 const express = require("express");
-const Joi = require("joi");
 const handleError = require("../utility/handleError");
 const { validateReview, isLoggedIn, isReviewAuthor } = require("../middleware");
 const reviews = require("../controllers/reviews");
