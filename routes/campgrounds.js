@@ -1,7 +1,4 @@
 const express = require("express");
-const Joi = require("joi");
-const Campground = require("../models/campground");
-const { findByIdAndUpdate } = require("../models/campground");
 const handleError = require("../utility/handleError");
 const router = express.Router();
 const { isLoggedIn, isAuthor, validateCampground } = require("../middleware");
@@ -10,8 +7,6 @@ const multer = require("multer");
 const { storage } = require("../cloudinary");
 const upload = multer({ storage });
 
-//YelpCamp
-// router.get("/home", campgrounds.homePage);
 
 router.route("/").get(handleError(campgrounds.index)).post(
   isLoggedIn,

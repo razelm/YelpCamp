@@ -163,7 +163,7 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/reviews", reviewRoutes);
 
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home')
 });
 
