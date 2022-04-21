@@ -29,13 +29,6 @@ const CampgroundSchema = new Schema({
       required: true,
     },
   },
-  // geometry: {
-  //   type: "Point",
-  //   coordinates: [
-  //     cities[random1000].longitude,
-  //     cities[random1000].latitude,
-  //   ]
-  // },
   title: String,
   images: [ImageSchema],
   price: Number,
