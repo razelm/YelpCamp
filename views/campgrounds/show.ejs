@@ -129,9 +129,7 @@
 
 <script>
     const mapToken = "<%-process.env.MAPBOX_TOKEN%>";
-    const campground = <%-JSON.stringify(campground {
-        parseFloat:review.rating
-    })%>;
+    const campground = <%-JSON.stringify(campground, {parseFloat: review.rating})%>;
 </script>
 <script src="/JS/showPageMap.js"></script>
 
