@@ -37,7 +37,7 @@ module.exports.campgroundSchema = Joi.object({
 module.exports.reviewSchema = Joi.object({
   review: Joi.object({
     reviewTitle: Joi.string().escapeHTML(),
-    rating: Joi.number().required().min(1).max(5),
+    rating: Joi.string().required().min(1).max(5),
     body: Joi.string().required().escapeHTML(),
   }).required(),
 });
