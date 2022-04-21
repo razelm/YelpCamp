@@ -19,11 +19,9 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require("helmet");
-
 const MongoStore = require("connect-mongo");
-// const dbUrl = ;
-//"mongodb://127.0.0.1:27017/yelp-camp",
 const dbUrl = process.env.DB_URL || "mongodb://127.0.0.1:27017/yelp-camp";
+
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -47,6 +45,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
+
 //Mongo Sanitize
 app.use(mongoSanitize());
 
@@ -86,11 +85,6 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //Helmet
-// app.use(
-//   helmet()
-// );
-
-
 const scriptSrcUrls = [
     "https://stackpath.bootstrapcdn.com/",
     "https://api.tiles.mapbox.com/",
@@ -153,20 +147,14 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
 //Routes
-// app.use("/yelpcamp", yelpcampRoutes);
-// app.use("/home", Routes);
 app.use("/", userRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/reviews", reviewRoutes);
 
-
 app.get('/', (req, res) => {
     res.render('home')
 });
-
 
 //Error Handling
 app.all("*", (req, res, next) => {
@@ -177,13 +165,6 @@ app.use((err, req, res, next) => {
   res.status(404).render("404");
   console.log(err);
 });
-
-// app.use((err, req, res, next) => {
-//   const { statusCode = 500 } = err;
-//   if (!err.message) err.message = "OH NO! Something went terribly wrong! :(";
-//   res.status(statusCode).render("error", { err });
-//   console.log(err);
-// });
 
 //Local Host
 const port = process.env.PORT || 3000;

@@ -85,5 +85,3 @@ CampgroundSchema.post("findOneAndDelete", async function (doc) {
 });
 
 module.exports = mongoose.model("campground", CampgroundSchema);
-
-// My ID = 624053ec88da99693b174b28
